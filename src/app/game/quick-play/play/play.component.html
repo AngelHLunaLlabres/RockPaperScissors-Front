@@ -1,0 +1,23 @@
+<div class="container">
+    <div>Choose a move:</div>
+    <div>
+        <img class="icon" (click)="onSave(movesEnum.ROCK)" src="assets/rock.png" >
+    </div>
+    <div>
+        <img class="icon" (click)="onSave(movesEnum.PAPER)" src="assets/paper.png">
+        <img class="icon" (click)="onSave(movesEnum.SCISSORS)" src="assets/scissors.png">
+    </div>
+    <div>
+        <div *ngIf="computerMove != null">Computer choosed:</div>
+        <div>
+            <img class="resultIcon" *ngIf="movesEnum.ROCK === computerMove" src="assets/rock.png">
+            <img class="resultIcon" *ngIf="movesEnum.PAPER === computerMove" src="assets/paper.png">
+            <img class="resultIcon" *ngIf="movesEnum.SCISSORS === computerMove" src="assets/scissors.png">
+        </div>
+    </div>
+    <div>
+        <div class="Tie" *ngIf="result=='TIE'">It's a Tie!</div>
+        <div class="Win" *ngIf="result=='WIN'">You Win!</div>
+        <div class="Lose" *ngIf="result=='LOSE'">You Lose!</div>
+    </div>
+</div>

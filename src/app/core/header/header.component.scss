@@ -1,0 +1,15 @@
+.mat-toolbar {
+    background-color: #0f0f83a3;
+    color: white;
+  }
+  
+  .header_container {
+      display: flex;
+      width: 100%;
+      .header_title {
+          .mat-icon {
+              vertical-align: sub;
+          }
+      }
+
+  }

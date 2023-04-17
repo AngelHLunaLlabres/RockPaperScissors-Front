@@ -1,0 +1,36 @@
+<div class="container">
+    <div >User: {{wins.length}} / Computer: {{loses.length}}</div>
+
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="userMove">
+            <mat-header-cell *matHeaderCellDef> User move </mat-header-cell>
+            <mat-cell *matCellDef="let element"> 
+                <img class="icon" *ngIf="movesEnum.ROCK === element.userMove" src="assets/rock.png">
+                <img class="icon" *ngIf="movesEnum.PAPER === element.userMove" src="assets/paper.png">
+                <img class="icon" *ngIf="movesEnum.SCISSORS === element.userMove" src="assets/scissors.png">
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="computerMove">
+            <mat-header-cell *matHeaderCellDef> Computer move </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <img class="icon" *ngIf="movesEnum.ROCK === element.computerMove" src="assets/rock.png">
+                <img class="icon" *ngIf="movesEnum.PAPER === element.computerMove" src="assets/paper.png">
+                <img class="icon" *ngIf="movesEnum.SCISSORS === element.computerMove" src="assets/scissors.png">
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="result">
+            <mat-header-cell *matHeaderCellDef> Result </mat-header-cell>
+            <mat-cell *matCellDef="let element" > 
+                <div class="Tie" *ngIf="resultsEnum.TIE === element.result" > Tie </div>
+                <div class="Lose" *ngIf="resultsEnum.LOSE === element.result" > Lose </div> 
+                <div class="Win" *ngIf="resultsEnum.WIN === element.result" > Win </div> 
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+ 
+</div>
